@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: lendsqr-wallet-api
+    runtime: node
+    plan: free
+    buildCommand: npm ci --include=dev && npm run build && npm prune --omit=dev
+    startCommand: npm start
+    healthCheckPath: /ready
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: '22'
+      - key: TRUST_PROXY_HOPS
+        value: '1'
+      - key: DATABASE_URL
+        fromDatabase:
+          name: lendsqr-wallet-db
+          property: connectionString
+      - key: ADMIN_API_KEY
+        generateValue: true
+databases:
+  - name: lendsqr-wallet-db
+    plan: free
+    databaseName: wallet
+    user: wallet
+    postgresMajorVersion: '17'
+    ipAllowList: []

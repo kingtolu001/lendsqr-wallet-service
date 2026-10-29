@@ -1,0 +1,72 @@
+{
+  "base": "https://lendsqr-wallet-service-t524.onrender.com",
+  "verified_at": "2026-10-28T22:42:10.851Z",
+  "results": [
+    {
+      "name": "HTTPS database readiness",
+      "status": "passed"
+    },
+    {
+      "name": "Three account/wallet creations",
+      "status": "passed"
+    },
+    {
+      "name": "Funding replay commits once",
+      "status": "passed"
+    },
+    {
+      "name": "Concurrent overspending",
+      "status": "passed",
+      "requests": 20,
+      "committed": 10,
+      "rejected": 10,
+      "source_minor": "0",
+      "destination_minor": "1000"
+    },
+    {
+      "name": "Concurrent duplicate transfer",
+      "status": "passed",
+      "requests": 8,
+      "committed": 1,
+      "replayed": 7
+    },
+    {
+      "name": "Changed-payload replay rejected",
+      "status": "passed"
+    },
+    {
+      "name": "Self-transfer, invalid amount and missing credentials rejected",
+      "status": "passed"
+    },
+    {
+      "name": "Sender block/unblock",
+      "status": "passed"
+    },
+    {
+      "name": "Blacklisted recipient cannot receive transfers or funding",
+      "status": "passed"
+    },
+    {
+      "name": "Blacklisted onboarding rejected",
+      "status": "passed"
+    },
+    {
+      "name": "History ownership and committed transaction count",
+      "status": "passed",
+      "source_records": 13,
+      "outsider_records": 0
+    },
+    {
+      "name": "Final exact balance conservation",
+      "status": "passed",
+      "source_minor": "900",
+      "destination_minor": "1100",
+      "outsider_minor": "0",
+      "total_funding_minor": "2000"
+    },
+    {
+      "name": "Request ID and security response headers",
+      "status": "passed"
+    }
+  ]
+}
